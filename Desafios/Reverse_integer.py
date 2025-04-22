@@ -21,23 +21,13 @@ Restrições:
 
 class Solution(object):
     def reverse(self, x):
-        chega_min, chega_max = -2**31, 2**31 -1
-
-        result = 0
         sign = -1 if x < 0 else 1
-        x = abs(x)
-
-        while x != 0:
-            digit = x % 10
-            x //= 10
-
-            # Chegagem de overlfow antes de adicionar o novo dígito
-            if result > (chega_max - digit) // 10:
-               return 0
-           
-            result = result * 10 + digit
-
-        return sign * result
+        x_new = str(abs(x))
+        re_x = x_new[::-1]
+        result = sign * int(re_x)
+        if result < -2**31 or result > 2**31 -1 :
+            return 0
+        return result
     
 sol = Solution()
 print(sol.reverse(123))
