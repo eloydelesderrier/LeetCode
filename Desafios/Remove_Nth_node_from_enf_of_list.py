@@ -30,11 +30,6 @@ class ListNode(object):
 
 class Solution(object):
     def removeNthFromEnd(self, head, n):
-        """
-        :type head: Optional[ListNode]
-        :type n: int
-        :rtype: Optional[ListNode]
-        """
 
         # Cria um nó fictício que aponta para a cabeça da lista
         dummy = ListNode(0, head)
